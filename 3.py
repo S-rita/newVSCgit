@@ -9,13 +9,39 @@ class Disk(object):
         self.dwidth = width
 
     def showdisk(self):
-        pass
+        t.penup()
+        t.goto(self.dxpos, self.dypos)
+        t.pendown()
+        for i in range(2):
+            t.fd(self.dwidth)
+            t.left(90)
+            t.fd(self.dheight)
+            t.left(90)
+        t.fd(self.dwidth/2)
+        t.penup()
+        t.done()
 
     def newpos(self, xpos, ypos):
-        pass
+        self.dxpos = xpos
+        self.dypos = ypos
+        t.penup()
+        t.goto(self.dxpos, self.dypos)
     
     def cleardisk(self):
-        pass
+        t.penup()
+        t.goto(self.dxpos, self.dypos)
+        t.pendown()
+        t.pencolor("white")
+        t.forward(self.dwidth/2)
+        t.left(90)
+        t.forward(self.dheight)
+        t.left(90)
+        t.forward(self.dwidth)
+        t.left(90)
+        t.forward(self.dheight)
+        t.left(90)
+        t.forward(self.dwidth/2)
+        t.pencolor("black")
 
 class Pole(object):
     def __init__(self, name = "", xpos = 0, ypos = 0, thick = 10, length = 100):
@@ -28,7 +54,19 @@ class Pole(object):
         self.plength = length
 
     def showpole(self):
-        pass
+        t.penup()
+        t.goto(self.pxpos, self.pypos)
+        t.pendown()
+        t.pencolor("black")
+        t.forward(self.pthick/2)
+        t.left(90)
+        t.forward(self.plength)
+        t.left(90)
+        t.forward(self.pthick)
+        t.left(90)
+        t.forward(self.plength)
+        t.left(90)
+        t.forward(self.pthick/2)
 
     def pushdisk(self, disk):
         pass
