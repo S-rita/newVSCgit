@@ -9,10 +9,23 @@ class Disk(object):
         self.dwidth = width
 
     def showdisk(self):
-        pass
+        t.penup()
+        t.goto(self.dxpos, self.dypos)
+        t.pendown()
+        for i in range(2):
+            t.fd(self.dwidth)
+            t.left(90)
+            t.fd(self.dheight)
+            t.left(90)
+        t.fd(self.dwidth/2)
+        t.penup()
+        t.done()
 
     def newpos(self, xpos, ypos):
-        pass
+        self.dxpos = xpos
+        self.dypos = ypos
+        t.penup()
+        t.goto(self.dxpos, self.dypos)
     
     def cleardisk(self):
         pass
