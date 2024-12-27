@@ -8,7 +8,6 @@ class Disk(object):
         self.dheight = height
         self.dwidth = width
 
-
     def showdisk(self):
         t.penup()
         t.goto(self.dxpos, self.dypos)
