@@ -14,13 +14,20 @@ class Transportation(object):
 
 
 class Walk( Transportation ):
-
    def __init__( self, start, end, distance ):
       Transportation.__init__( self, start, end, distance)
 
    def find_cost( self ):
       return 0
 
+class Taxi(Transportation):
+   def __init__( self, start, end, distance ):
+      Transportation.__init__( self, start, end, distance)
+
+
+   def find_cost( self ):
+      return self.distance * 40
+   
 class Boat( Transportation ):
    def __init__( self, start, end, distance, pier ):
       Transportation.__init__( self, start, end, distance)
@@ -36,7 +43,7 @@ travel_cost = 0
 trip = [ Walk("KMITL","KMITL SCB Bank",0.6),
          Taxi("KMITL SCB Bank","Ladkrabang Station",5),
          Train("Ladkrabang Station","Payathai Station",40,6),
-         Taxi("Payathai Station","The British Council",3) 
+         Taxi("Payathai Station","The British Council",3),
          Walk("The British Council","Pinklao Pier",0.6),
          Boat("Pinklao Pier", "Rajini Pier", 40, 4)
       ]
